@@ -1,0 +1,87 @@
+- type: job
+  parent: CMJobBase
+  id: RMCMarineInformant
+  name: rmc-job-name-marine-informant
+  description: rmc-job-description-marine-informant
+  playTimeTracker: RMCJobMarineInformant
+  ranks:
+    RMCRankCivilian: []
+  startingGear: RMCGearMarineInformant
+  icon: "RMCJobIconEmpty"
+  joinNotifyCrew: false
+  supervisors: rmc-job-supervisors-marine-high-command
+  accessGroups:
+  - Colonist
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Skills
+      skills:
+        RMCSkillConstruction: 1
+        RMCSkillEndurance: 2
+        RMCSkillFireman: 1
+        RMCSkillFirearms: 1
+    - type: EquipSurvivorPreset
+      preset: RMCSurvivorPresetInformant
+    - type: RMCSurvivor
+    - type: MotionDetectorTracked
+    - type: NpcFactionMember
+      factions:
+      - Survivor
+    - type: IntelRescueSurvivorObjective
+  greeting: rmc-job-greeting-survivor
+  hasIcon: false
+  hidden: true
+
+- type: startingGear
+  id: RMCGearMarineInformant
+  equipment:
+    jumpsuit: CMJumpsuitColonist
+    back: RMCSatchelCivilianFill
+    shoes: RMCShoesBlack
+    id: CMIDCardColonist
+    ears: CMHeadsetColony
+    pocket1: RMCPouchSurvivalFill
+    pocket2: RMCPouchGeneral
+  inhand:
+    - CMPenFountain
+    - RMCIDCardMarineInformant
+
+- type: playTimeTracker
+  id: RMCJobMarineInformant
+  isHumanoid: true
+
+- type: entity
+  parent: CMIDCardSilver
+  id: RMCIDCardMarineInformant
+  name: Marine Informant ID card
+  description: A inconspicous ID card, issued to the covert intelligence agents of the UNMC. You probably dont have the clearance to see this.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/CMIDs/silver_id.rsi
+  - type: Clothing
+    slots:
+    - idcard
+    sprite: _RMC14/Objects/CMIDs/silver_id.rsi
+  - type: PresetIdCard
+    job: RMCJobMarineInformant
+
+- type: entity
+  id: RMCSurvivorPresetInformant
+  name: informant survivor preset
+  components:
+  - type: SurvivorPreset
+    randomGear:
+    - [ CMClipboard ]
+    randomWeapon:
+    - [ RMCWeaponPistolB92FS, RMCMagazinePistolB92FS ]
+    - [ RMCWeaponRevolverSpearhead, RMCSpeedLoader357Hollowpoint ]
+    - [ RMCWeaponPistolMK45, RMCMagazinePistolMK45 ]
+    - [ CMWeaponPistolM1984, CMMagazinePistolM1984 ]
+    # TODO RMC14 S&W .38 model 37 revolver
+    primaryWeapons:
+    - [ CMBeltMarineHunting, RMCWeaponBoltActionRifle ]
+    #    - [ CMBeltMarineHunting, RMCWeaponBoltActionRifle ] # TODO RMC14 uzi
+    - [ CMBeltMarineBuckshot, RMCWeaponShotgunHG3712 ]
+    - [ CMBeltMarineAR10, WeaponRifleAR10 ]
+    primaryWeaponChance: 0.6
