@@ -1,15 +1,15 @@
 - type: job
   parent: CMJobBase
   id: RMCMarineInformant
-  name: rmc-job-name-marine-informant
-  description: rmc-job-description-marine-informant
+  name: "UNMC Informant"
+  description: "You are a informant for the United Nations Marine Corp. Report on anything relevant to your superiors via fax."
   playTimeTracker: RMCJobMarineInformant
   ranks:
     RMCRankCivilian: []
   startingGear: RMCGearMarineInformant
   icon: "RMCJobIconEmpty"
   joinNotifyCrew: false
-  supervisors: rmc-job-supervisors-marine-high-command
+  supervisors: "UNMC High Command"
   accessGroups:
   - Colonist
   special:
@@ -29,7 +29,7 @@
       factions:
       - Survivor
     - type: IntelRescueSurvivorObjective
-  greeting: rmc-job-greeting-survivor
+  greeting: "You are a undercover operative for the United Nations Marine Corp. Report on happenings in the are via fax to high command."
   hasIcon: false
   hidden: true
 
@@ -39,22 +39,43 @@
     jumpsuit: CMJumpsuitColonist
     back: RMCSatchelCivilianFill
     shoes: RMCShoesBlack
-    id: CMIDCardColonist
+    id: RMCIDCardMarineInformant
     ears: CMHeadsetColony
     pocket1: RMCPouchSurvivalFill
     pocket2: RMCPouchGeneral
   inhand:
     - CMPenFountain
-    - RMCIDCardMarineInformant
+    - RMCIDCardInformantFakeID
 
-- type: playTimeTracker
-  id: RMCJobMarineInformant
-  isHumanoid: true
+- type: entity
+  id: RMCRandomHumanoidUNMCInformant
+  name: UNMC informant ghost role
+  suffix: Spawner, Player, Informant
+  components:
+  - type: Sprite
+    sprite: _RMC14/Structures/Machines/fax_machine.rsi
+    state: icon
+  - type: RandomHumanoidSpawner
+    settings: RMCUNMCInformant
+
+- type: randomHumanoidSettings
+  parent: RMCEventHumanoid
+  id: RMCUNMCInformant
+  components:
+  - type: GhostRole
+    name: "UNMC Informant"
+    description: "You are covert intelligence agent, sent from High Command. Report any happenings in the area via fax to your superiors. High Command will probably have a specific mission in mind..."
+    rules: "Listen to the game master! Do not assume you are hostile to the marines. You do not remember anything from your previous life, etc."
+    reregister: false
+    job: RMCMarineInformant
+    raffle:
+      settings: short
+  - type: GhostRoleApplySpecial
 
 - type: entity
   parent: CMIDCardSilver
   id: RMCIDCardMarineInformant
-  name: Marine Informant ID card
+  name: "Marine Informant ID card"
   description: A inconspicous ID card, issued to the covert intelligence agents of the UNMC. You probably dont have the clearance to see this.
   components:
   - type: Sprite
@@ -65,6 +86,16 @@
     sprite: _RMC14/Objects/CMIDs/silver_id.rsi
   - type: PresetIdCard
     job: RMCJobMarineInformant
+
+- type: entity
+  parent: CMIDCardLanyard
+  id: RMCIDCardInformantFakeID
+  name: colonist ID card
+  components:
+  - type: PresetIdCard
+    job: CMSurvivor
+  - type: ItemIFF
+    faction: FactionSurvivor
 
 - type: entity
   id: RMCSurvivorPresetInformant
@@ -85,3 +116,6 @@
     - [ CMBeltMarineBuckshot, RMCWeaponShotgunHG3712 ]
     - [ CMBeltMarineAR10, WeaponRifleAR10 ]
     primaryWeaponChance: 0.6
+
+- type: playTimeTracker
+  id: RMCJobMarineInformant
