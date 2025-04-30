@@ -1,25 +1,25 @@
 - type: entity
-  id: RMCRandomHumanoidUNMCInformant
-  name: UNMC Informant
+  id: RMCRandomHumanoidTSEInformant
+  name: TSE Informant
   suffix: Spawner, Informant
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Machines/fax_machine.rsi
     state: icon
   - type: RandomHumanoidSpawner
-    settings: RMCUNMCInformantSettings
+    settings: RMCTSEInformantSettings
 
 - type: randomHumanoidSettings
   parent: RMCEventHumanoid
-  id: RMCUNMCInformantSettings
+  id: RMCTSEInformantSettings
   components:
   - type: Rank
     rank: RMCRankCivilian
   - type: Loadout
-    prototypes: [ RMCGearUNMCInformant  ]
+    prototypes: [ RMCGearTSEInformant  ]
   - type: GhostRole
-    name: "UNMC Informant"
-    description: "You are a informant for UNMC High Command. Relay any happenings in the area to them via fax. Try not to let the public know. The GM probably has a specific job in mind..."
+    name: "TSE Informant"
+    description: "You are a informant for the Three Suns Empire. Relay any happenings in the area to them via fax. Try not to let the public know. The GM probably has a specific job in mind..."
     rules: "You do not remember your previous life. You are NOT hostile to any faction unless directed to be by the GM or a admin. Try to blend in, and behave as a civilian colonist would."
     reregister: false
     raffle:
@@ -33,21 +33,21 @@
       RMCSkillFirearms: 1
 
 - type: startingGear
-  id: RMCGearUNMCInformant
+  id: RMCGearTSEInformant
   equipment:
     jumpsuit: CMJumpsuitColonist
-    back: RMCSatchelUNMCInformantFill
+    back: RMCSatchelTSEInformantFill
     shoes: RMCShoesBlack
-    id: RMCIDCardMarineInformantFakeID
+    id: RMCIDCardTSEInformantFakeID
     ears: CMHeadsetColony
     pocket1: RMCPouchSurvivalFill
     pocket2: RMCPouchGeneral
 
 - type: entity
   parent: CMIDCardGold
-  id: RMCIDCardMarineInformant
-  name: "UNMC Informant ID card"
-  description: A shiny ID card, issued to the covert intelligence agents of the UNMC. You probably don't have the clearance to see this.
+  id: RMCIDCardTSEInformant
+  name: "TSE Informant ID card"
+  description: A shiny ID card, issued to the covert intelligence agents of the Three Suns Empire. You probably don't have the clearance to see this.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/CMIDs/general.rsi
@@ -57,11 +57,11 @@
     - idcard
     sprite: _RMC14/Objects/CMIDs/general.rsi
   - type: PresetIdCard
-    name: "UNMC Informant ID Card"
+    name: "TSE Informant ID Card"
 
 - type: entity
   parent: CMIDCardLanyard
-  id: RMCIDCardMarineInformantFakeID
+  id: RMCIDCardTSEInformantFakeID
   name: colonist ID card
   components:
   - type: PresetIdCard
@@ -71,13 +71,13 @@
 
 - type: entity
   parent: CMSatchel
-  id: RMCSatchelUNMCInformantFill
+  id: RMCSatchelTSEInformantFill
   suffix: Informant, Filled
   components:
   - type: StorageFill
     contents:
     - id: CMClipboard
-    - id: RMCIDCardMarineInformant
+    - id: RMCIDCardTSEInformant
     - id: CMPenFountain
     - id: CMSheetMetal20
     - id: CMWeaponPistolM1984
