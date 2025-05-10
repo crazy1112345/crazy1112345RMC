@@ -498,3 +498,15 @@
     - MarineRequisition
     - MarineIntel
     defaultChannel: MarineCommand
+
+#test
+- type: entity
+  parent: CMEncryptionKey
+  id: CMEncryptionKeyDevices
+  name: listening devices encryption key
+  components:
+  - type: EncryptionKey
+    channels:
+    - WeYaListeningDevice
+    - UNMCListeningDevice
+    defaultChannel: UNMCListeningDevice

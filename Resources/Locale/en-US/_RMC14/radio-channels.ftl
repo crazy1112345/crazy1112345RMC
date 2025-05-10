@@ -16,6 +16,9 @@ chat-radio-marine-delta = Delta
 chat-radio-marine-echo = Echo
 chat-radio-marine-foxtrot = Foxtrot
 
+chat-radio-unmc-listening-device = Listening Device
+chat-radio-we-ya-listening-device = Listening Device
+
 chat-radio-colony = Colony
 chat-radio-WY = We-Ya
 chat-radio-CMB = Colony Marshal Bureau

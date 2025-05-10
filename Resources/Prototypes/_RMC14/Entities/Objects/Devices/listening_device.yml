@@ -1,0 +1,71 @@
+- type: entity
+  parent: BaseItem
+  id: RMCListeningDeviceDefault
+  name: listening device
+  description: A high tech listening device. Im so fucking lost.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Devices/communication.rsi
+    state: icon
+    layers:
+    - state: walkietalkie
+    - state: walkietalkie-on
+  - type: Item
+    size: Normal
+  - type: Clothing
+    sprite: _RMC14/Objects/Devices/communication.rsi
+    clothingVisuals:
+      shoes:
+      - state: walkietalkie
+      - state: walkietalkie-on
+    slots:
+    - NONE
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+  - type: ProtectedFromStepTriggers
+
+- type: entity
+  parent: CMRadioHandheld
+  id: RMCUNMCListeningDevice
+  name: unmc listening device
+  suffix: Chameleon
+  description: A high tech, tiny listening device able to fit into a myriad of items. It has the insignia of the Provost Marshal Office.
+  components:
+  - type: RadioMicrophone
+    broadcastChannel: UNMCListeningDevice
+    toggleOnInteract: false
+    enabled: true
+    ignoreXenos: true
+  - type: DisguiseItem
+    slot: [none]
+    default: RMCListeningDeviceDefault
+  - type: UserInterface
+    interfaces:
+      enum.DisguiseUiKey.Key:
+        type: ChameleonBoundUserInterface
+  - type: Tag
+    tags: [] # ignore "WhitelistChameleon" tag
+
+- type: entity
+  parent: CMRadioHandheld
+  id: RMCWeYaListeningDevice
+  name: we-ya listening device
+  suffix: Chameleon
+  description: A high tech, tiny listening device able to fit into a myriad of items. It is imprinted with a small Weston-Yamada logo.
+  components:
+  - type: RadioMicrophone
+    broadcastChannel: WeYaListeningDevice
+    toggleOnInteract: false
+    enabled: true
+    ignoreXenos: true
+  - type: DisguiseItem
+    slot: [none]
+    default: RMCListeningDeviceDefault
+  - type: UserInterface
+    interfaces:
+      enum.DisguiseUiKey.Key:
+        type: ChameleonBoundUserInterface
+  - type: Tag
+    tags: [] # ignore "WhitelistChameleon" tag

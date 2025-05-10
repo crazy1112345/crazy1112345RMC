@@ -137,6 +137,24 @@
   longRange: true
   tower: true
 
+# Listening Devices
+- type: radioChannel
+  id: UNMCListeningDevice
+  name: chat-radio-unmc-listening-device
+  keycode: "ú" #none in cm13
+  frequency: 1298
+  color: "#318779"
+  longRange: true
+
+# Listening Devices
+- type: radioChannel
+  id: WeYaListeningDevice
+  name: chat-radio-we-ya-listening-device
+  keycode: "ü" #none in cm13
+  frequency: 1299
+  color: "#fe9b24"
+  longRange: true
+
 # Non Marine
 - type: radioChannel
   id: Colony

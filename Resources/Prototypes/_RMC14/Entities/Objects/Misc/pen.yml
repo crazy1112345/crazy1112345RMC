@@ -17,9 +17,7 @@
     equippedPrefix: pen
     sprite: _RMC14/Objects/Misc/paper.rsi
     quickEquip: false
-    slots:
-    - Suitstorage
-    - Ears
+    slots: [Ears]
 
 - type: entity
   parent: CMPen
@@ -38,3 +36,8 @@
     state: fountain_pen
   - type: Item
     sprite: _RMC14/Objects/Misc/paper.rsi
+  - type: Clothing
+    slots: [EARS]
+  - type: Tag
+    tags:
+    - WhitelistChameleon
