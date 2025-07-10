@@ -1,0 +1,13 @@
+- type: entity
+  parent: BaseItem
+  id: RMCBuisnessCardBlack
+  name: Black We-Ya Buisness Card
+  description: Look at that subtle off-black coloring. The tasteful thickness of it. Oh my God, it even has a watermark.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Misc/buisness_cards.rsi
+    state: card1
+  - type: Item
+    size: Tiny
+    sprite: _RMC14/Objects/Misc/buisness_cards.rsi
+    heldPrefix: card1
