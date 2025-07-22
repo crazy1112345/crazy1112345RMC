@@ -1,16 +1,5 @@
 - type: job
-  parent: CMJobBase
-<<<<<<< HEAD
-  id: RMCCLFResponder
-  name: rmc-job-name-clf-responder
-  description: rmc-job-description-clf-responder
-  playTimeTracker: RMCJobCLFResponder
-  ranks:
-    RMCRankCLFRebelResponder: []
-  startingGear: RMCGearCLFResponder
-  icon: "CMJobIconEmpty"
-  joinNotifyCrew: false
-=======
+  parent: RMCJobRibbonBase
   id: CMCLFResponder
   name: rmc-job-name-clf-responder
   description: rmc-job-description-clf-responder
@@ -27,6 +16,9 @@
   special:
   - !type:AddComponentSpecial
     components:
+    - type: NpcFactionMember
+      factions:
+      - CLF
     - type: Skills
       skills:
         RMCSkillConstruction: 2
@@ -73,7 +65,6 @@
 =======
     - type: JobPrefix
       prefix: rmc-job-prefix-clf-responder
-    - type: RMCRibbon
   hasIcon: false
   hidden: true
 
