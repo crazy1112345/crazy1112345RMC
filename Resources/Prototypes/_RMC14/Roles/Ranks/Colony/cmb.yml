@@ -52,6 +52,12 @@
   paygrade: ICBL
 
 - type: rank
+  id: RMCRankICBInspector
+  name: Interstellar Commerce Bureau Inspector
+  prefix: ICB Insp.
+  paygrade: ICBI
+
+- type: rank
   id: RMCRankIHROObserver
   name: Interstellar Sapient Rights Observer
   prefix: "Obsv."
