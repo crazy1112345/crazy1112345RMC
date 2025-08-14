@@ -2,9 +2,9 @@
 - type: job
   parent: CMJobBase
   id: CMICBInspector
-  name: rmc-job-name-icb
-  description: rmc-ghost-role-information-icb-description
-  playTimeTracker: RMCJobICBLiaison
+  name: rmc-job-name-icb-inspector
+  description: rmc-ghost-role-information-icb-inspector-description
+  playTimeTracker: RMCJobICBInspector
   ranks:
     RMCRankICBInspector: [ ]
   startingGear: RMCGearICBLiaison
@@ -28,7 +28,7 @@
 
 - type: entity
   id: RMCRandomHumanoidICBLiaison
-  name: interstellar commerce bureau liaison ghost role
+  name: interstellar commerce bureau inspector ghost role
   suffix: Spawner, Player, Neutral
   components:
   - type: Sprite
@@ -46,7 +46,7 @@
     description: rmc-ghost-role-information-icb-description
     rules: rmc-ghost-role-information-bureau-rules
     reregister: false
-    job: CMICBLiaison
+    job: CMICBInspector
     raffle:
       settings: short
     requirements:
@@ -63,18 +63,17 @@
     ears: RMCHeadsetDistressICBLiaison # TODO RMC14 tape recorder
     back: RMCSatchelICBLiaisonFill # TODO RMC14 secure leather satchel
     jumpsuit: CMJumpsuitLiaisonBlack
-    outerClothing: RMCHazardVestYellow
+    belt: CMClipboard
+    outerClothing: RMCHazardVestBlue
     gloves: CMHandsInsulated
     shoes: RMCBootsPMCFilled
     id: RMCIDCardICBLiaison
     pocket1: RMCPouchFirstAidERTFill
     pocket2: RMCPouchGeneralLargeICBLiaison
     suitStorage: RMCFlashlight
-  inhand:
-  - CMClipboard
 
 - type: playTimeTracker
-  id: RMCJobICBLiaison
+  id: RMCJobICBInspector
 
 - type: jobIcon
   parent: CMJobIconBase
