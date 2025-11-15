@@ -47,7 +47,7 @@
     shoes: RMCShoesLaceup
     head: RMCHeadCapFlippable
     id: RMCIDCardCLFResponder
-    ears: CMHeadsetColony
+    ears: RMCHeadsetDistressCLF
     eyes: RMCGlassesMedicalHUDGlasses
     back: CMSatchelFilledFaxResponder
     belt: CMClipboard

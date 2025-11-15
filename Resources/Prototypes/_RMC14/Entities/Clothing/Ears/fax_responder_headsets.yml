@@ -1,0 +1,163 @@
+#headsets...
+# UNMC + Provost (they are similar enough and share every other means of listening to the round, so I figure why not this)
+- type: entity
+  parent: RMCHeadsetShip
+  id: CMHeadsetUNMCFaxResponder
+  name: UNMC high command headset
+  description: Issued only to high command staff.
+  components:
+  - type: Sprite
+    state: mco_headset
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - RMCEncryptionKeyUNMCFaxResponder
+  - type: HeadsetMultiBroadcast
+    cooldown: 60
+  - type: RMCHeadset
+    radioTextIncrease: 3
+    channels:
+    - MarineSOF
+  - type: GrantSquadLeaderTracker
+    defaultMode: ProvostMarshal
+    trackerModes:
+    - ProvostMarshal
+    - ProvostDeputyMarshal
+    - ProvostChiefInspector
+    - ProvostInspector
+
+
+# Mostly Read-only keys for fax responders and the like.
+# UNMC + Provost Key
+- type: entity
+  parent: CMEncryptionKey
+  id: RMCEncryptionKeyUNMCFaxResponder
+  name: unmc read only master encryption key
+  components:
+  - type: EncryptionKey
+    channels:
+    - MarineHighCommand
+    - Provost
+    readOnlyChannels:
+    - MarineCommand
+    - MarineCommon
+    - MarineMilitaryPolice
+    - MarineAlpha
+    - MarineBravo
+    - MarineCharlie
+    - MarineDelta
+    - MarineEcho
+    - MarineFoxtrot
+    - MarineEngineer
+    - MarineMedical
+    - MarineRequisition
+    - MarineJTAC
+    - MarineIntel
+    - MarineSOF
+  - type: Sprite
+    state: cmp_key
+
+# We-Ya Key
+- type: entity
+  parent: CMEncryptionKey
+  id: RMCEncryptionKeyLiaisonReadOnly
+  name: corporate liaison radio encryption key
+  components:
+  - type: EncryptionKey
+    readOnlyChannels:
+    - MarineCommand
+    - MarineJTAC
+    - MarineIntel
+    - MarineCommand
+    - MarineEngineer
+    - MarineMedical
+    - MarineRequisition
+    - MarineJTAC
+    - MarineIntel
+    - WEYA
+    - MarineCommon
+  - type: Sprite
+    state: cap_key
+
+# CMB Key
+- type: entity
+  parent: CMEncryptionKey
+  id: RMCEncryptionKeyBureauReadOnly
+  name: bureau encryption key
+  components:
+  - type: EncryptionKey
+    readOnlyChannels:
+    - CMB
+    - MarineCommon
+    - MarineMilitaryPolice
+    - MarineCommand
+    - MarineMedical
+    - MarineIntel
+    - Colony
+  - type: Sprite
+    state: cap_key
+
+# Free Press Key
+- type: entity
+  parent: CMEncryptionKey
+  id: RMCEncryptionKeyCorrespondentReadOnly
+  name: correspondent radio encryption key
+  components:
+  - type: EncryptionKey
+    readOnlyChannels:
+    - MarineCommand
+    - MarineCommon
+    - MarineAlpha
+    - MarineBravo
+    - MarineCharlie
+    - MarineDelta
+    - MarineEcho
+    - MarineFoxtrot
+    - MarineEngineer
+    - MarineMedical
+    - MarineRequisition
+    - MarineJTAC
+    - MarineIntel
+    - MarineCommand
+    - MarineJTAC
+    - MarineIntel
+  - type: Sprite
+    state: cap_key
+
+# SPP Key
+- type: entity
+  parent: RMCEncryptionKeySPP
+  id: RMCEncryptionKeySPPCommandReadOnly
+  name: SPP command radio encryption key
+  components:
+  - type: EncryptionKey
+    channels:
+    - SPPCommand
+    readOnlyChannels:
+    - SPP
+    - SPPCommand
+    - SPPEngi
+    - SPPMed
+    - SPPCCT
+    - Colony
+    defaultChannel: SPPCommand
+
+
+# TSE Key
+- type: entity
+  parent: CMEncryptionKey
+  id: RMCEncryptionKeyRoyalMarineReadOnly
+  name: royal marine radio encryption key
+  components:
+  - type: EncryptionKey
+    channels:
+    - RoyalMarine
+    readOnlyChannels:
+    - MarineCommand
+    - MarineCommon
+    defaultChannel: RoyalMarine
+  - type: Sprite
+    state: sl_key
+
+# CLF just uses colony as their only channel, so...
+
