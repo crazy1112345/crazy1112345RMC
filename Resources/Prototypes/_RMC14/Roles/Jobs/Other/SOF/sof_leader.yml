@@ -1,6 +1,6 @@
 ﻿- type: job
   parent: CMJobBase
-  id: CMMarineRaiderLeader
+  id: CMMarineRaiderLeaderNonDeathsquad
   name: rmc-job-name-marine-raider-leader
   description: rmc-ghost-role-information-sof-description
   playTimeTracker: CMJobMarineRaiderLeader

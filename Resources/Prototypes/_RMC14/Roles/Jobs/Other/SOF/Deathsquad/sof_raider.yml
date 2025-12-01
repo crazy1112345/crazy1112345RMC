@@ -1,6 +1,6 @@
 ﻿- type: job
   parent: CMJobBase
-  id: CMMarineRaiderNonDeathsquad
+  id: CMMarineRaider
   name: rmc-job-name-marine-raider
   description: "" # TODO RMC14
   playTimeTracker: CMJobMarineRaider
